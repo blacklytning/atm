@@ -117,6 +117,7 @@ else:
 st.subheader("Demand History")
 
 history = atm_df.tail(30)
+history = history.loc[:, ~history.columns.duplicated()]
 
 fig = px.line(
     history,
